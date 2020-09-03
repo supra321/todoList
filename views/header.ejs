@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+	<a class="navbar-brand" href="/">TodoList</a>
+  	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/about">About</a>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" method="POST" action="/search">
+			<input class="form-control mr-sm-2" type="text" placeholder="List Name" name="listTitle" autocomplete="off">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+  	</div>
+</nav>
