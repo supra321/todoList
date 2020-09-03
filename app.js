@@ -40,19 +40,18 @@ const listSchema = new mongoose.Schema ({
 const List = mongoose.model("list", listSchema);
 
 app.get("/", (req, res) => {
-	let newListItems = [];
-
 	listItem.find({}, (err, items) => {
 		if (err) {
 			console.log(err);
 		} else {
 			if (items.length === 0) {
 				listItem.insertMany(defaultItems, (err) => err ? console.log(err) : console.log("All Items Inserted"));
+			} else {
+				res.render("list", {heading : "Today's List", newListItems : items})
 			}
-			newListItems = items.map(item => item);
 		}
 	})
-	.then(() => res.render("list", {heading : "Today's List", newListItems : newListItems}));
+	.then(() => res.redirect("/"));
 })
 
 app.get("/about", (req, res) => {
